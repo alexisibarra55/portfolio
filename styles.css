@@ -209,7 +209,7 @@ h2 {
     font-size: 1.5rem;
 }
 
-/* Responsive para el banner */
+/* Responsive */
 @media (max-width: 768px) {
     .banner {
         height: 400px;
@@ -223,13 +223,41 @@ h2 {
         font-size: 1.2rem;
     }
 
-    nav ul {
-        flex-direction: column;
+    /* Ajustes para el header en móvil */
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-start;
         align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-start;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+        flex-grow: 1;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0 0.4rem;
+        white-space: nowrap;
+    }
+
+    .theme-toggle {
+        position: static;
+        transform: none;
+        margin-left: auto;
+        font-size: 1.1rem;
+        color: var(--header-text);
+        flex-shrink: 0;
     }
 
     .hero {
@@ -405,8 +433,4 @@ section {
 [data-theme="dark"] .contact-form button {
     background: var(--accent-gray);
     color: #fff;
-}
-[data-theme="dark"] .contact-form button:hover {
-    background: var(--text-light);
-    color: var(--primary-gray);
 } 
