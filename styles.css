@@ -1,0 +1,412 @@
+/* Variables de color - Tema Claro (por defecto) */
+:root {
+    --primary-gray: #f5f5f5;
+    --light-gray: #ffffff;
+    --medium-gray: #666666;
+    --accent-gray: #999999;
+    --section-gray: #bfbfbf;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    --header-text: #4a4a4a;
+    --transition-speed: 0.3s;
+}
+
+/* Tema Oscuro */
+[data-theme="dark"] {
+    --primary-gray: #1a1a1a;
+    --light-gray: #2a2a2a;
+    --medium-gray: #4a4a4a;
+    --accent-gray: #808080;
+    --section-gray: #2a2a2a;
+    --text-light: #e0e0e0;
+    --text-dark: #ffffff;
+    --header-text: #ffffff;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-gray);
+    background-color: var(--light-gray);
+}
+
+/* Navegación */
+header {
+    background-color: var(--light-gray);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+nav ul li a:hover {
+    color: var(--accent-gray);
+}
+
+/* Secciones principales */
+main {
+    margin-top: 60px;
+}
+
+section {
+    padding: 4rem 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-gray);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+}
+
+/* Sobre Mí */
+.about {
+    background-color: var(--section-gray);
+    color: var(--text-light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Proyectos */
+.projects {
+    background-color: var(--primary-gray);
+    color: var(--text-light);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.project-card {
+    background-color: var(--section-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    color: var(--text-light);
+    animation: slideUp 0.5s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contacto */
+.contact {
+    background-color: var(--section-gray);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin: 1rem 0;
+    color: var(--text-light);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-gray);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* Títulos de sección */
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    font-size: 2rem;
+}
+
+/* Banner */
+.banner {
+    height: 600px;
+    width: 100%;
+    background-color: var(--primary-gray);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.banner-content {
+    color: var(--text-dark);
+    padding: 2rem;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.banner-content h1,
+.banner-content p {
+    color: var(--text-dark);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+}
+
+/* Responsive para el banner */
+@media (max-width: 768px) {
+    .banner {
+        height: 400px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-content p {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Botón de tema */
+.theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--header-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+    color: var(--accent-gray);
+}
+
+/* Botón de scroll arriba */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-gray);
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-speed);
+    z-index: 1000;
+}
+
+.scroll-top:hover {
+    background-color: var(--accent-gray);
+    transform: translateY(-3px);
+}
+
+.scroll-top.visible {
+    display: flex;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Aplicar animaciones a las secciones */
+section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.project-card {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Contact Form Minimalista */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 2rem auto 1.5rem auto;
+    background: rgba(0,0,0,0.05);
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--light-gray);
+    color: var(--text-light);
+    font-size: 1rem;
+    resize: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    transition: box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-gray);
+}
+
+.contact-form textarea {
+    min-height: 90px;
+    max-height: 200px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--accent-gray);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: var(--medium-gray);
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1rem 0.5rem;
+        max-width: 95vw;
+    }
+}
+
+.contact-info {
+    margin-top: 1.5rem;
+}
+
+.contact-form ::placeholder {
+    font-family: 'Arial', sans-serif;
+    color: var(--medium-gray);
+    font-size: 1rem;
+    opacity: 1;
+}
+
+[data-theme="dark"] .contact-form {
+    background: rgba(40, 40, 40, 0.85);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea {
+    background: #222;
+    color: #fff;
+    border: 1px solid var(--accent-gray);
+}
+[data-theme="dark"] .contact-form input::placeholder,
+[data-theme="dark"] .contact-form textarea::placeholder {
+    color: #bbb;
+}
+[data-theme="dark"] .contact-form button {
+    background: var(--accent-gray);
+    color: #fff;
+}
+[data-theme="dark"] .contact-form button:hover {
+    background: var(--text-light);
+    color: var(--primary-gray);
+} 
